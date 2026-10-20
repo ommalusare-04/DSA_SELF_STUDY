@@ -10,42 +10,25 @@ class SLL:
         newnode=Node(data)
         if self.head==None:
             self.head=newnode
+            newnode.next=self.head #points to it self
         else:
             temp=self.head
-            while temp.next != None:
+            while temp.next != self.head:
                 temp=temp.next
             temp.next=newnode
+            newnode.next=self.head # connects back to head
 
-    def insertat(self,data,pos):
-        newnode=Node(data)
-        if pos < 1:
-            print("invalid position")
-        if pos == 1:
-            newnode.next=self.head
-            self.head=newnode
-        else:
-            count=1
-            prev=None
-            temp=self.head
-            while temp != None and count < pos:
-                prev=temp
-                temp=temp.next
-                count+=1
-            prev.next=newnode
-            newnode.next=temp
-
-
-
+    
     def traversal(self):
         if self.head == None:
             print("empty list")
         else:
-            temp=self.head
-            while temp != None:
-                print(temp.data,end=" ")
-                temp=temp.next
-            print()
+            temp = self.head
+            while temp.next != self.head:
+                print(temp.data, end=" ")
+                temp = temp.next
 
+            print(temp.data)
 sll=SLL()
 sll.apppend(10)
 sll.apppend(20)
@@ -53,5 +36,3 @@ sll.apppend(30)
 sll.apppend(40)
 sll.traversal()
 
-sll.insertat(25,3)
-sll.traversal()
