@@ -3,7 +3,7 @@ class Node:
         self.data=data
         self.next=None
 
-class SLL:
+class CSLL:
     def __init__(self):
         self.head=None
     def apppend(self,data):
@@ -24,12 +24,12 @@ class SLL:
             print("empty list")
         else:
             temp = self.head
-            while temp.next != self.head:
+            while temp.next != self.head: # traverse till 
                 print(temp.data, end=" ")
                 temp = temp.next
 
             print(temp.data)
-sll=SLL()
+sll=CSLL()
 sll.apppend(10)
 sll.apppend(20)
 sll.apppend(30)
