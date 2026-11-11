@@ -3,17 +3,18 @@ class Node:
         self.data = value
         self.next = None
 
-
 class Queue:
     def __init__(self):
-        self.front = self.rear = None
+        self.front =None
+        self.rear = None
 
     def enqueue(self, new_node):
         if self.rear:
             self.rear.next = new_node
             self.rear = new_node
         else:
-            self.front = self.rear = new_node
+            self.front = new_node
+            self.rear = new_node
 
     def dequeue(self):
         if self.front:
@@ -29,7 +30,6 @@ class Queue:
 
     def print(self):
         temp = self.front
-
         while temp:
             print(temp.data, end="  ")
             temp = temp.next
@@ -48,9 +48,6 @@ q.enqueue(Node(40))
 print("Queue elements:")
 q.print()
 
-q.dequeue()
-q.dequeue()
-q.dequeue()
 q.dequeue()
 q.dequeue()
 

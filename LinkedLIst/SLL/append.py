@@ -38,3 +38,6 @@ sll.traversal()
 sll.append(40)
 sll.traversal()
 
+
+
+            
