@@ -71,13 +71,27 @@ class SLL:
                 prev=temp
                 temp=temp.next
             prev.next=None
+
+    def deleteByValue(self,value):
+        if self.head == None:
+            print("empty list")
+        elif self.head.data==value:
+            self.head=None
+        else:
+            prev=None
+            temp=self.head
+            while temp != None and temp.data != value:
+                prev=temp
+                temp=temp.next
+            if temp == None:
+                print("value not found")
+            else:
+                prev.next=temp.next
+
+
+
             
 
-
-
-        
-
-            
 
 
 
@@ -94,7 +108,10 @@ sll.print()
 # sll.deleteAtFirst()
 # sll.print()
 
-sll.deleteAtLast()
+# sll.deleteAtLast()
+# sll.print()
+
+sll.deleteByValue(20)
 sll.print()
 
 
