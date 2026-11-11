@@ -76,7 +76,7 @@ class SLL:
         if self.head == None:
             print("empty list")
         elif self.head.data==value:
-            self.head=None
+            self.head=self.head.next
         else:
             prev=None
             temp=self.head
@@ -88,10 +88,14 @@ class SLL:
             else:
                 prev.next=temp.next
 
-
-
-            
-
+    def alter(self):
+        temp=self.head
+        if self.head == None:
+            print("empty list")
+        while temp != None:
+            print(temp.data,end=" ")
+            temp=temp.next.next
+        print()
 
 
 
@@ -100,6 +104,7 @@ print("linked list elements are:")
 sll.append(10)
 sll.append(20)
 sll.append(30)
+sll.append(40)
 sll.print()
 
 # sll.InsertAnyPos(30,2)
@@ -111,8 +116,11 @@ sll.print()
 # sll.deleteAtLast()
 # sll.print()
 
-sll.deleteByValue(20)
-sll.print()
+# sll.deleteByValue(20)
+# sll.print()
 
+# sll.deleteByValue(1)
+# sll.print()
 
+sll.alter()
 
