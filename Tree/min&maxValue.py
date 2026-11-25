@@ -56,6 +56,7 @@ class BST:
         temp=self.root
         if temp == None:
             print("empty tree")
+        
         while temp.left != None:
             temp=temp.left
         print("Minimum value:",temp.data)
